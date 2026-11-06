@@ -1,27 +1,160 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Koleksi Rekomendasi Produk</title>
-  <!-- Menghubungkan file CSS -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fffaf5">
+  <meta name="description" content="Kadai Katuang — kurasi produk pilihan dari Shopee.">
+  <title>Kadai Katuang — Pilihan Harian</title>
+  <link rel="preconnect" href="https://down-id.img.susercontent.com">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Profil Anda -->
-    <img src="https://via.placeholder.com/150" alt="Foto Profil" class="profile-img">
-    <h1>Koleksi Produk Pilihan</h1>
-    <p class="bio">Rekomendasi barang terbaik & berkualitas termurah di Shopee 👇</p>
-
-    <!-- Kontainer Daftar Produk (Diisi otomatis dari JSON via JS) -->
-    <div class="links-container" id="links-container">
-      <!-- Produk akan dimuat secara otomatis -->
+  <!-- HEADER (tetap di atas saat scroll) -->
+  <header class="topbar">
+    <div class="shell topinner">
+      <a href="#atas" class="brand"><span class="brand-mark">✦</span>Kadai Katuang</a>
+      <div class="top-actions">
+        <button class="quiet-btn" id="loginBtn" type="button">Login admin</button>
+        <button class="icon-btn" id="menuBtn" type="button" aria-label="Buka menu kategori" aria-expanded="false" aria-controls="drawer">
+          ☰ <span>Menu</span>
+        </button>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <!-- Menghubungkan file JavaScript -->
-  <script src="script.js"></script>
+  <main class="shell" id="atas">
+
+    <!-- BANNER -->
+    <section class="hero" aria-label="Banner utama">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">KURASI PILIHAN KAMI</div>
+          <h1>Temuan bagus, belanja lebih gampang.</h1>
+          <p>Jelajahi rekomendasi produk pilihan Kadai Katuang. Pilih kategori favoritmu dan temukan produk yang pas.</p>
+          <a class="primary" href="#produk">Jelajahi produk ↗</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-card"><span>✦</span><small>GOOD FINDS ONLY</small></div>
+          <span class="art-badge">Pilihan untukmu ✨</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section id="produk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">JELAJAHI KOLEKSI</div>
+          <h2>Produk pilihan</h2>
+        </div>
+        <span class="count" id="count"></span>
+      </div>
+
+      <div class="adminbar" id="adminbar">
+        <strong>✦ Dashboard admin aktif</strong>
+        <div class="buttons">
+          <button type="button" id="addProduct">+ Produk</button>
+          <button type="button" id="manageCategories">Kelola kategori</button>
+          <button type="button" id="exportJson">Unduh JSON</button>
+          <button type="button" id="resetData">Reset</button>
+          <button type="button" id="logout">Keluar</button>
+        </div>
+      </div>
+
+      <div class="chips" id="chips" aria-label="Filter kategori"></div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <span>© 2026 Kadai Katuang · Tautan produk menuju Shopee.</span>
+      <button class="text-button" id="footerLogin" type="button">Akses admin</button>
+    </div>
+  </footer>
+
+  <!-- MENU KATEGORI (drawer ☰) -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Menu kategori" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Pilih kategori</h2>
+      <button class="close" id="closeDrawer" type="button" aria-label="Tutup menu">×</button>
+    </div>
+    <div class="drawer-list" id="drawerList"></div>
+    <p class="help">Pilih kategori untuk menyaring daftar produk.</p>
+  </aside>
+
+  <!-- DIALOG LOGIN -->
+  <dialog id="loginDialog">
+    <div class="dialog-body">
+      <div class="dialog-head">
+        <h2>Masuk admin</h2>
+        <button class="close" type="button" data-close aria-label="Tutup">×</button>
+      </div>
+      <form id="loginForm">
+        <div class="field">
+          <label for="password">Kata sandi</label>
+          <input id="password" type="password" autocomplete="current-password" required>
+        </div>
+        <p class="error" id="loginError" role="alert"></p>
+        <button class="primary" type="submit">Masuk dashboard</button>
+      </form>
+      <p class="help">Demo: kata sandi bawaan 123456 (ubah di script.js).</p>
+    </div>
+  </dialog>
+
+  <!-- DIALOG PRODUK -->
+  <dialog id="productDialog">
+    <div class="dialog-body">
+      <div class="dialog-head">
+        <h2 id="productHeading">Tambah produk</h2>
+        <button class="close" type="button" data-close aria-label="Tutup">×</button>
+      </div>
+      <form id="productForm">
+        <input type="hidden" id="productId">
+        <div class="field">
+          <label for="title">Nama produk</label>
+          <input id="title" required maxlength="150">
+        </div>
+        <div class="field">
+          <label for="link">Link produk (HTTPS)</label>
+          <input id="link" type="url" required pattern="https://.*" placeholder="https://shopee.co.id/...">
+        </div>
+        <div class="field">
+          <label for="image">Link foto produk (HTTPS)</label>
+          <input id="image" type="url" pattern="https://.*" placeholder="https://down-id.img.susercontent.com/...">
+        </div>
+        <div class="field">
+          <label for="category">Kategori</label>
+          <select id="category" required></select>
+        </div>
+        <button class="primary" type="submit">Simpan produk</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- DIALOG KATEGORI -->
+  <dialog id="categoryDialog">
+    <div class="dialog-body">
+      <div class="dialog-head">
+        <h2>Kelola kategori</h2>
+        <button class="close" type="button" data-close aria-label="Tutup">×</button>
+      </div>
+      <p class="help">Gunakan panah untuk mengatur posisi. Menghapus kategori memindahkan produknya ke "Lainnya".</p>
+      <div class="manage-list" id="categoryRows"></div>
+      <form id="categoryForm">
+        <div class="field">
+          <label for="categoryName">Nama kategori baru</label>
+          <input id="categoryName" required maxlength="40">
+        </div>
+        <p class="error" id="categoryError" role="alert"></p>
+        <button class="primary" type="submit">+ Tambah kategori</button>
+      </form>
+    </div>
+  </dialog>
+
 </body>
 </html>
