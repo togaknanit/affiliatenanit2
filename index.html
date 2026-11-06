@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koleksi Rekomendasi Produk</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f4f6f8;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
+    .profile-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 12px;
+      border: 3px solid #ee4d2d; /* Warna khas Shopee */
+    }
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+    p.bio {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 24px;
+    }
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .link-card {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    }
+    .product-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 14px;
+    }
+    .product-info {
+      text-align: left;
+      flex-grow: 1;
+    }
+    .product-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .btn-buy {
+      background-color: #ee4d2d;
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Profil Anda -->
+    <img src="https://via.placeholder.com/150" alt="Foto Profil" class="profile-img">
+    <h1>Koleksi Produk Pilihan</h1>
+    <p class="bio">Rekomendasi barang terbaik & berkualitas termurah di Shopee 👇</p>
+
+    <!-- Daftar Link Produk Shopee -->
+    <div class="links-container">
+      
+      <!-- Produk 1 -->
+      <a href="Kadai Katuang Affiliate" target="_blank" class="link-card">
+        <img src="https://via.placeholder.com/100" alt="Produk 1" class="product-img">
+        <div class="product-info">
+          <div class="product-title">1. Nama Produk Shopee Pertama</div>
+          <span class="btn-buy">Beli di Shopee</span>
+        </div>
+      </a>
+
+      <!-- Produk 2 -->
+      <a href="Kadai Katuang Affiliate" target="_blank" class="link-card">
+        <img src="https://via.placeholder.com/100" alt="Produk 2" class="product-img">
+        <div class="product-info">
+          <div class="product-title">2. Nama Produk Shopee Kedua</div>
+          <span class="btn-buy">Beli di Shopee</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>
