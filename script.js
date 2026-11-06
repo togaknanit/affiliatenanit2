@@ -3,7 +3,7 @@
 
   /* ===== Pengaturan ===== */
   const STORAGE_KEY = 'kadai-katuang-data-v2';
-  const ADMIN_PASSWORD = '123456'; // ganti sesuai keinginan (hanya untuk demo)
+  const ADMIN_PASSWORD = 'Katuang100Jt'; // ganti sesuai keinginan (hanya untuk demo)
   const DEFAULT_CATEGORY = 'Lainnya';
 
   // Data cadangan bila products.json gagal dimuat (misal dibuka langsung via file://)
