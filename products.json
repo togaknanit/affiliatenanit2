@@ -1,19 +1,14 @@
-{
-  "categories": ["Fashion", "Elektronik", "Lainnya"],
-  "products": [
-    {
-      "id": 1,
-      "title": "Pantyhose Stockings Yoga hip high",
-      "link": "https://shopee.co.id/product/799020686/23135680427",
-      "image": "https://down-id.img.susercontent.com/file/id-11134207-7qukz-lez5jdsfpdq61c.webp",
-      "category": "Fashion"
-    },
-    {
-      "id": 2,
-      "title": "Pantyhose Stockings Sport Gym",
-      "link": "https://shopee.co.id/product/799020686/21076927609",
-      "image": "https://down-id.img.susercontent.com/file/id-11134201-7qul0-leph48dhg518d9.webp",
-      "category": "Fashion"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "title": "Pantyhose Stockings Yoga hip high",
+    "link": "https://shopee.co.id/product/799020686/23135680427",
+    "image": "https://down-id.img.susercontent.com/file/id-11134207-7qukz-lez5jdsfpdq61c.webp"
+  },
+  {
+    "id": 2,
+    "title": "Pantyhose Stockings Sport Gym",
+    "link": "https://shopee.co.id/product/799020686/21076927609",
+    "image": "https://down-id.img.susercontent.com/file/id-11134201-7qul0-leph48dhg518d9.webp"
+  }
+]
