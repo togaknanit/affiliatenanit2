@@ -1,9 +1,75 @@
 {
   "categories": [
     "women's sportswear",
+    "Sports equipment",
+    "Men's sportswear",
+    "Men's everyday wear",
     "Lainnya"
   ],
   "products": [
+    {
+      "id": 1794019624965,
+      "title": "Celana Parasut Running Boxing",
+      "link": "https://s.shopee.co.id/4VeARAfoa8",
+      "image": "https://down-aka-id.img.susercontent.com/id-11134207-7ra0p-mbpkd0wg09j043.webp",
+      "category": "Men's sportswear"
+    },
+    {
+      "id": 1794019545413,
+      "title": "Kaos Oversized Polos",
+      "link": "https://s.shopee.co.id/9fMGaa1kpt",
+      "image": "https://down-aka-id.img.susercontent.com/id-11134207-8224q-mh0e5fxoq51od8.webp",
+      "category": "Men's everyday wear"
+    },
+    {
+      "id": 1794019471261,
+      "title": "Celana Pendek Parasut",
+      "link": "https://s.shopee.co.id/906ZnGyXme",
+      "image": "https://down-aka-id.img.susercontent.com/id-11134207-81zti-mfrq9mxkgdfu52.webp",
+      "category": "Men's sportswear"
+    },
+    {
+      "id": 1794019407853,
+      "title": "Jaket Hoodie",
+      "link": "https://s.shopee.co.id/60SyDhFyqV",
+      "image": "https://down-aka-id.img.susercontent.com/id-11134207-81ztp-mv1inw8y9gy24c.webp",
+      "category": "women's sportswear"
+    },
+    {
+      "id": 1794019334405,
+      "title": "Rompi Vest Consina",
+      "link": "https://s.shopee.co.id/5LDHQMzlgW",
+      "image": "https://down-aka-id.img.susercontent.com/id-11134207-822wo-mni4bkj94hs458.webp",
+      "category": "Men's sportswear"
+    },
+    {
+      "id": 1794019220629,
+      "title": "Celana Jeans Panjang Pria",
+      "link": "https://s.shopee.co.id/4VeAQivWcO",
+      "image": "https://down-aka-id.img.susercontent.com/id-11134207-7ra0h-mcxabkici6604a.webp",
+      "category": "Men's everyday wear"
+    },
+    {
+      "id": 1794019113254,
+      "title": "Kemeja polos pria lengan panjang",
+      "link": "https://s.shopee.co.id/9pfgmOf4Vz",
+      "image": "https://down-aka-id.img.susercontent.com/id-11134207-8224y-mgzirl3wgqvdc3.webp",
+      "category": "Men's everyday wear"
+    },
+    {
+      "id": 1794018732622,
+      "title": "Audio Learning Reflektif",
+      "link": "https://tribeversity.com/course/detail/5m3i45td?affCode=T0M2Q5GW",
+      "image": "https://tribelio-s3-production.s3.ap-southeast-1.amazonaws.com/resources/20260913/TBModel_Course/5187616/2026091313021676c36a3f8de6fae6140d3ca9e9094caf.",
+      "category": "Sports equipment"
+    },
+    {
+      "id": 1794018536127,
+      "title": "Program lari 5K",
+      "link": "https://tribeversity.com/course/detail/tnjzp0wi?affCode=T0M2Q5GW",
+      "image": "https://tribelio-s3-production.s3.ap-southeast-1.amazonaws.com/resources/20261024/TBModel_Course/5192952/202610242032154c0ca4a53590cf034247e8a693a3ee17.",
+      "category": "Sports equipment"
+    },
     {
       "id": 1793944155279,
       "title": "Celana Legging Olahraga High Quality",
